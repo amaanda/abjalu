@@ -15,7 +15,7 @@ Eles se comunicam via protocolo RS485.
 O master consulta valores, realiza ações de controle e pode selecionar
 setpoints para ação de controle local.
 
-Contém um linkit 7698 duo.
+Contém um linkit 7688 duo.
 
 ## Slave1
 
