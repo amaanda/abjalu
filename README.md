@@ -38,20 +38,21 @@ placa linkit smart duo (no modo AP),
 você pode executar o programa minicom para comunicação serial:
 
 `ssh root@192.168.100.1`
+
 `minicom`
 
 e digite os comandos ou o protocolo diretamente.
 Você deve digitar normalmente o comando e apertar enter ao finalizar.
-para protocol, você não precisa apertar enter.
+Para protocol, você não precisa apertar enter.
 
 ## Protocolo:
 
 O protocolo obedece à seguinte regra:
 
 ### O primeiro caractere deve ser o endereço da slave que se quer pedir por informação.
-São possíveis, assim, 255 endereços menos o usado para controle (a). Portanto são possíveis:
+São possíveis, assim, 256 endereços menos o usado para controle (a). Portanto são possíveis:
 
-#### 254 ENDEREÇOS.
+#### 255 ENDEREÇOS.
 
 #### '0' é o endereço da slave_zero.
 #### '1' é o endereço da slave_one.
