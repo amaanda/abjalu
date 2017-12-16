@@ -125,4 +125,18 @@ O protocolo obedece agora à seguinte regra:
 
 #### 's0r?l' indica a leitura ? do sensor da placa slave_zero. Onde 'l' na verdade deve ser substituído pelo byte de checksum ('s'+'0'+'r'+'?')
 
+Os arquivos da parte dois estão em uma pasta separada. Destaque para o código do checksum:
+
+```
+char protocol_errorCharacterFor(String msg) {
+  byte cks = 0;
   
+  for(int i=0; i < 4; i++) {
+    cks += byte(msg[i]);
+  }
+  
+  return char(cks);
+  //return 'l';
+}
+```
+
