@@ -140,3 +140,16 @@ char protocol_errorCharacterFor(String msg) {
 }
 ```
 
+Testes para comunicação sem fio:
+
+A partir de um terminal ssl via conexão wifi direta à placa linkit smart duo (no modo AP), você pode executar o programa telnet para comunicação wifi usando o endereço ip de qualquer node:
+
+``` telnet 192.168.100.220``` (A máscara é a da rede da nodemcu 255.255.255.0 e o final 220 varia)
+
+Você pode encontrar o endereço das nodes usando a interface do arduino que mapeia o ip ao nome da placa pela biblioteca OTA de upload via wifi.
+
+e digite o protocolo diretamente. Você deve digitar normalmente a palavra do protocolo e apertar enter ao finalizar. Recomenda-se comentar a parte do cálculo de detecção do erro e retornar qualquer outro fixo ao invés do calculado (letra 'l' por exemplo). Isso para que você não tenha que calcular o checksum de cabeça. 
+
+### Próximos passos:
+
+Implementar o código nodejs para operar as placas e entregar uma interface amigável via express que pode ser acessada pelo navegador e abstrai os códigos para controles simples de chaves e displays com a leitura do sensor.
