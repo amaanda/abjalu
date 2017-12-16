@@ -91,6 +91,8 @@ ativa/desativa o modo autoping que ping de um em um segundo pela slave (use some
 
 O protocolo obedece agora à seguinte regra:
 
+### SEMPRE A PALAVRA É COMPOSTA DE EXATOS 5 CARACTERES
+
 ### O primeiro caractere deve ser 'a' seguido do byte de endereço.
 
 #### '0' é o endereço da slave_zero.
@@ -107,6 +109,20 @@ O protocolo obedece agora à seguinte regra:
 #### 'a0r0l' para ler o sensor da placa slave_zero. Onde 'l' na verdade deve ser substituído pelo byte de checksum ('a'+'0'+'r'+'0')
 #### 'a1s1l' para ligar o relê da placa slave_one. Onde 'l' na verdade deve ser substituído pelo byte de checksum ('a'+'0'+'r'+'0')
 
+### As respostas das placas também são em 5 CARACTERES
 
+### O primeiro caractere da resposta é sempre 's' seguido do byte de endereço da placa que está respondendo.
+
+#### '0' é o endereço da slave_zero.
+#### '1' é o endereço da slave_one.
+
+#### 's0' é uma resposta da placa slave_zero.
+#### 's1' é uma resposta da placa slave_one.
+
+### O terceiro caratere será 'r'.
+### O quarto caractere é o byte com a leitura do sensor; 
+### O quinto caratere é o checksum.
+
+#### 's0r?l' indica a leitura ? do sensor da placa slave_zero. Onde 'l' na verdade deve ser substituído pelo byte de checksum ('s'+'0'+'r'+'?')
 
   
