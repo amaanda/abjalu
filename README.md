@@ -1,4 +1,4 @@
-# abjalu
+# ABJALU
 Projeto de comunicação de dados.
 
 # Composição:
@@ -85,7 +85,27 @@ retorna o ping de todos os slaves escutando (use somente com um slave para debug
 `autoping`
 ativa/desativa o modo autoping que ping de um em um segundo pela slave (use somente com um slave para debugar).
 
+# PARTE 2
 
+## Modificações no Protocolo:
+
+O protocolo obedece agora à seguinte regra:
+
+### O primeiro caractere deve ser 'a' seguido do byte de endereço.
+
+#### '0' é o endereço da slave_zero.
+#### '1' é o endereço da slave_one.
+
+#### 'a0' para falar com placa slave_zero.
+#### '01' para falar com placa slave_one.
+
+### O terceiro caratere deve ser 'r' para operação de leitura ou o caractere 's' para sets.
+### O quarto caractere é usado para identificar o valor ('0' ou '1') à ser setado. Ele é ignorado no caso de leitura ('r' 
+
+### Um quinto caratere de checksum.
+
+#### 'a0r0l' para ler o sensor da placa slave_zero. Onde 'l' na verdade deve ser substituído pelo byte de checksum ('a'+'0'+'r'+'0')
+#### 'a1s1l' para ligar o relê da placa slave_one. Onde 'l' na verdade deve ser substituído pelo byte de checksum ('a'+'0'+'r'+'0')
 
 
 
